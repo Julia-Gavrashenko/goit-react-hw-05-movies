@@ -20,11 +20,18 @@ export const getMoviesBySearch = async () => {
 };
 
 
-export const getMovieDetails = async () => {
+export const getMovieDetails = async id => {
   const responce = await axios.get(
-    `/movie/{movie_id}?api_key=${API_KEY}&query=''&page=1&include_adult=false`
+    `movie/${id}?api_key=${API_KEY}&language=en-US`
   );
   return responce.data;
 };
 
+
+export const getMovieCast = async id => {
+  const responce = await axios.get(
+    `movie/${id}/credits?api_key=${API_KEY}&language=en-US`
+  );
+  return responce.data;
+};
 

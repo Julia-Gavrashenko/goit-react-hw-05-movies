@@ -8,7 +8,7 @@ export const Home = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const fetshData = async () => {
+    const fetchData = async () => {
       setLoading(true);
       try {
         const responce = await getTrendingMovies();
@@ -20,7 +20,7 @@ export const Home = () => {
         setLoading(false);
       }
     };
-    fetshData();
+    fetchData();
   }, [error]);
 
   return (
