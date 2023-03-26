@@ -24,11 +24,13 @@ export const Home = () => {
   }, [error]);
 
   return (
-    <section>
-      {loading && <div>Loading...</div>}
-      <div>
-        <TrendingMovieList moviesInTrend={trendingMovies} />
-      </div>
-    </section>
+    <main>
+      <section>
+        {loading && <div>Loading...</div>}
+        <div>
+          <TrendingMovieList moviesInTrend={trendingMovies} />
+        </div>
+      </section>
+    </main>
   );
 };
