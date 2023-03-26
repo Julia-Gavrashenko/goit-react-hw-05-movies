@@ -1,12 +1,20 @@
-import { Link } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 
 export const MovieCard = ({
-  movie: { poster_path, title,  vote_average, overview, genres, id },
+  movie: { poster_path, title, vote_average, overview, genres, id },
 }) => {
   return (
     <section>
       <div>
-        <img src={poster_path} alt={title} width={250} />
+        <img
+          src={
+            poster_path
+              ? `https://image.tmdb.org/t/p/original${poster_path}`
+              : 'https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg'
+          }
+          alt={title}
+          width={250}
+        />
       </div>
       <div>
         <h2>{title}</h2>
@@ -25,12 +33,19 @@ export const MovieCard = ({
 
         <ul>
           <li>
-            <Link to={`/movies/${id}/cast`}>
+            <Link to={`cast`}>
               <p>Cast</p>
+            </Link>
+          </li>
+
+          <li>
+            <Link to={`reviews`}>
+              <p>Reviews</p>
             </Link>
           </li>
         </ul>
       </div>
+      <Outlet />
     </section>
   );
 };

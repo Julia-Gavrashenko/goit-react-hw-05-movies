@@ -1,7 +1,7 @@
 import { MovieCard } from 'components/MovieCard/MovieCard';
 import { getMovieDetails } from 'fetch-services/Fetch-servises';
-import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useEffect, useState, useRef } from 'react';
+import { useParams, useLocation, Link } from 'react-router-dom';
 
 export const MovieDetails = () => {
   const [movieDetails, setMovieDetails] = useState([]);
@@ -9,6 +9,8 @@ export const MovieDetails = () => {
   const [error, setError] = useState(null);
 
   const { movieId } = useParams();
+  const location = useLocation();
+  const backLinkLocation = useRef(location.state?.from ?? '/');
 
   useEffect(() => {
     const fetchData = async () => {
@@ -27,7 +29,11 @@ export const MovieDetails = () => {
 
   return (
     <>
+       <Link to={backLinkLocation.current}>
+          <button type='button'>Go Back</button>
+        </Link>
       <section>
+       
         {loading && <div>Loading...</div>}
         <MovieCard movie={movieDetails} />
       </section>
