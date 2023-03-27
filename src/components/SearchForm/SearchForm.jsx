@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { toast } from 'react-hot-toast';
+import { SearchBox, Searchbar, SearchBtn } from './SearchForm.styled';
 
 export const SearchForm = ({ onSubmit }) => {
   const [query, setQuery] = useState('');
@@ -21,9 +22,9 @@ export const SearchForm = ({ onSubmit }) => {
   };
 
   return (
-    <div>
+    <SearchBox>
       <form onSubmit={handleSubmit}>
-        <input
+        <Searchbar
           type="text"
           autoComplete="off"
           autoFocus
@@ -33,44 +34,9 @@ export const SearchForm = ({ onSubmit }) => {
           onChange={handleInputChange}
         />
 
-        <button type="submit">Search</button>
+        <SearchBtn type="submit">Search</SearchBtn>
       </form>
-    </div>
+    </SearchBox>
   );
 };
 
-// export const SearchForm = () => {
-//     [searchQuery, setSearchQuery] = useState('')
-
-//     const handleInputChange = event =>
-//         setSearchQuery(event.currentTarget.value.toLowerCase());
-
-//     const handleSubmit = event => {
-//         event.preventDefault();
-
-//         if (searchQuery.trim().replaceAll(/\s+/g, '+') === '') {
-//             toast('Please, enter something to search');
-//             return;
-//         }
-
-//         // onSubmit(searchQuery);
-//         setInputQuery('');
-//     };
-
-//    return (
-//     <section>
-//       <form onSubmit={handleSubmit}>
-//         <input
-//           type="text"
-//           autoComplete="off"
-//           autoFocus
-//           placeholder="Search movies"
-//           value={searchQuery}
-//           onChange={handleInputChange}
-//         />
-
-//         <button type="submit">Search</button>
-//       </form>
-//     </section>
-//   );
-// }

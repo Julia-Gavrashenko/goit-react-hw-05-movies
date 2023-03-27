@@ -1,18 +1,19 @@
 import { Suspense } from 'react';
-import { Link } from 'react-router-dom';
+// import { NavLink  } from 'react-router-dom';
 import { Outlet } from 'react-router-dom';
+import { NavBar, NavLinkStyled,  NavWrapper } from './Header.styled';
 
 export const Header = () => {
   return (
     <>
-      <header>
-        <nav>
-          <Link to="/">
+      <NavBar>
+        < NavWrapper>
+          <NavLinkStyled to="/">
             Home
-          </Link>
-          <Link to="/movies">Movies</Link>
-        </nav>
-      </header>
+          </NavLinkStyled >
+          <NavLinkStyled  to="/movies">Movies</NavLinkStyled >
+        </ NavWrapper>
+      </NavBar>
       <Suspense fallback={<div>Loading...</div>}>
         <Outlet />
       </Suspense>

@@ -1,19 +1,25 @@
 import { Link } from "react-router-dom";
+import { TrendingList, ListTitle, List, ListItem } from "./TrendingMovieList.styled";
 
 
 export const TrendingMovieList = ({ moviesInTrend }) => {
   const trendMovies = moviesInTrend.results;
 
   return (
-    <ul>
+    <TrendingList >
+      <ListTitle>Tranding today</ListTitle>
+       <List>
       {trendMovies?.map(item => (
-        <li key={item.id}>
+        <ListItem key={item.id}>
           <Link to={`/movies/${item.id}`}>
              <p> {item.title}</p>
           </Link>
          
-        </li>
+        </ListItem>
       ))}
-    </ul>
-  );
+    </List>
+  
+    </TrendingList >
+    );
+   
 };
