@@ -1,6 +1,7 @@
+import { Suspense } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 
-export const MovieCard = ({
+ const MovieCard = ({
   movie: { poster_path, title, vote_average, overview, genres, id },
 }) => {
   return (
@@ -45,7 +46,13 @@ export const MovieCard = ({
           </li>
         </ul>
       </div>
-      <Outlet />
+      
+      <Suspense fallback={<div>Loading...</div>}>
+        <Outlet />
+      </Suspense>
     </section>
   );
 };
+
+
+export default MovieCard

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { toast } from 'react-hot-toast';
 
-export const SearchForm = ({ getMovieOnSearch }) => {
+export const SearchForm = ({ onSubmit }) => {
   const [query, setQuery] = useState('');
 
   const handleInputChange = event => {
@@ -16,7 +16,7 @@ export const SearchForm = ({ getMovieOnSearch }) => {
       return;
     }
 
-    getMovieOnSearch(query);
+   onSubmit(query);
     setQuery('');
   };
 
@@ -28,6 +28,7 @@ export const SearchForm = ({ getMovieOnSearch }) => {
           autoComplete="off"
           autoFocus
           placeholder="Search movies"
+          name="movieName"
           value={query}
           onChange={handleInputChange}
         />

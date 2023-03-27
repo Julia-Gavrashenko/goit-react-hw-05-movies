@@ -1,9 +1,9 @@
-import { MovieCard } from 'components/MovieCard/MovieCard';
+import  MovieCard from 'components/MovieCard/MovieCard';
 import { getMovieDetails } from 'fetch-services/Fetch-servises';
 import { useEffect, useState, useRef } from 'react';
 import { useParams, useLocation, Link } from 'react-router-dom';
 
-export const MovieDetails = () => {
+ const MovieDetails = () => {
   const [movieDetails, setMovieDetails] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -40,3 +40,6 @@ export const MovieDetails = () => {
     </>
   );
 };
+
+
+ export default MovieDetails

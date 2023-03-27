@@ -2,7 +2,7 @@ import { getReviews } from 'fetch-services/Fetch-servises';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-export const Reviews = () => {
+ const Reviews = () => {
   const [reviewList, setReviewList] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -47,3 +47,5 @@ export const Reviews = () => {
     </>
   );
 };
+
+export default Reviews
