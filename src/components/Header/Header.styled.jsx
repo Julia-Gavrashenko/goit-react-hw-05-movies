@@ -9,10 +9,10 @@ export const NavBar = styled.header`
 
   display: flex;
   align-items: center;
-  padding: 30px;
+  padding: 40px;
   background-color: #060606;
   box-shadow: 0px 2px 10px 1px #424a51;
-  height: 90px;
+  height: 80px;
   width: 100%;
 `;
 

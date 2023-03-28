@@ -1,3 +1,4 @@
+import { LoadMore } from 'components/LoadMoreBtn/LoadMoreBtn';
 import { SearchForm } from 'components/SearchForm/SearchForm';
 import { SearchMovieList } from 'components/SearchMovieList/SearchMovieList';
 import { getMoviesBySearch } from 'fetch-services/Fetch-servises';
@@ -60,7 +61,8 @@ import { useLocation, useSearchParams } from 'react-router-dom';
         <SearchMovieList searchMovies={movies} location={location} />
 
         {movies.length > 0 && movies.length < totalResults && (
-          <button onClick={onLoadMore}>More Results</button>
+          // <button onBtnClick={onLoadMore}>More Results</button>
+          <LoadMore onBtnClick={onLoadMore}/>
         )}
 
         <Toaster

@@ -2,6 +2,8 @@ import  MovieCard from 'components/MovieCard/MovieCard';
 import { getMovieDetails } from 'fetch-services/Fetch-servises';
 import { useEffect, useState, useRef } from 'react';
 import { useParams, useLocation, Link } from 'react-router-dom';
+import { BackBtn } from 'components/MovieCard/MovieCard.styled'
+
 
  const MovieDetails = () => {
   const [movieDetails, setMovieDetails] = useState([]);
@@ -29,8 +31,8 @@ import { useParams, useLocation, Link } from 'react-router-dom';
 
   return (
     <>
-       <Link to={backLinkLocation.current}>
-          <button type='button'>Go Back</button>
+      <Link to={backLinkLocation.current}>
+          <BackBtn  type='button'> Go Back</BackBtn >
         </Link>
       <section>
        

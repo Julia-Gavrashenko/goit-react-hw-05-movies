@@ -5,10 +5,10 @@ export const SearchMovieList = ({ searchMovies, location }) => {
   return (
     <SearchList>
       <List>
-        {searchMovies?.map(item => (
-          <ListItem key={item.id}>
-            <Link to={`/movies/${item.id}`} state={{ from: location }}>
-              <p> {item.title}</p>
+        {searchMovies?.map(({id, title}) => (
+          <ListItem key={id}>
+            <Link to={`/movies/${id}`} state={{ from: location }}>
+              <p> {title}</p>
             </Link>
           </ListItem>
         ))}

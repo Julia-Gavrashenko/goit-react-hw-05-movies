@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { toast } from 'react-hot-toast';
-import { SearchBox, Searchbar, SearchBtn } from './SearchForm.styled';
+import { SearchBox,  Form, Searchbar, SearchBtn } from './SearchForm.styled';
 
 export const SearchForm = ({ onSubmit }) => {
   const [query, setQuery] = useState('');
@@ -23,7 +23,7 @@ export const SearchForm = ({ onSubmit }) => {
 
   return (
     <SearchBox>
-      <form onSubmit={handleSubmit}>
+      < Form onSubmit={handleSubmit}>
         <Searchbar
           type="text"
           autoComplete="off"
@@ -35,7 +35,7 @@ export const SearchForm = ({ onSubmit }) => {
         />
 
         <SearchBtn type="submit">Search</SearchBtn>
-      </form>
+      </ Form>
     </SearchBox>
   );
 };
