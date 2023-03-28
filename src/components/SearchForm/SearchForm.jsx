@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { toast } from 'react-hot-toast';
-import { SearchBox,  Form, Searchbar, SearchBtn } from './SearchForm.styled';
+import { SearchBox, Form, Searchbar, SearchBtn } from './SearchForm.styled';
+import PropTypes from 'prop-types';
 
 export const SearchForm = ({ onSubmit }) => {
   const [query, setQuery] = useState('');
@@ -12,7 +13,7 @@ export const SearchForm = ({ onSubmit }) => {
   const handleSubmit = event => {
     event.preventDefault();
 
-    if (query.trim() === '') {
+    if (query.trim().replaceAll(/\s+/g, '+') === '') {
       toast('Please, enter something to search');
       return;
     }
@@ -40,3 +41,6 @@ export const SearchForm = ({ onSubmit }) => {
   );
 };
 
+SearchForm.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+};

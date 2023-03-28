@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { TrendingList, ListTitle, List, ListItem } from "./TrendingMovieList.styled";
+import PropTypes from 'prop-types';
 
 
 export const TrendingMovieList = ({ moviesInTrend }) => {
@@ -22,4 +23,12 @@ export const TrendingMovieList = ({ moviesInTrend }) => {
     </TrendingList >
     );
    
+};
+
+
+TrendingMovieList.propTypes = {
+  searchMovies: PropTypes.shape({
+    title: PropTypes.string,
+    id: PropTypes.number,
+  }).isRequired,
 };

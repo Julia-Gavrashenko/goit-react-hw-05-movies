@@ -27,9 +27,9 @@ import { useLocation, useSearchParams } from 'react-router-dom';
       setLoading(true);
       try {
         const responce = await getMoviesBySearch(movieName, page);
-        console.log(responce);
         setMovies(prevState => [...prevState, ...responce.results]);
         setTotalResults(responce.total_results);
+        
       } catch {
         setError(error);
       } finally {
@@ -58,10 +58,12 @@ import { useLocation, useSearchParams } from 'react-router-dom';
         <div>
           <SearchForm value={movieName} onSubmit={updateQueryString} />
         </div>
+
+      
         <SearchMovieList searchMovies={movies} location={location} />
 
         {movies.length > 0 && movies.length < totalResults && (
-          // <button onBtnClick={onLoadMore}>More Results</button>
+         
           <LoadMore onBtnClick={onLoadMore}/>
         )}
 

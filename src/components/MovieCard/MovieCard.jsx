@@ -1,5 +1,6 @@
 import { Suspense } from 'react';
 import { Link, Outlet } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import {
   MovieBox,
   Card,
@@ -73,3 +74,10 @@ const MovieCard = ({
 };
 
 export default MovieCard;
+
+
+
+MovieCard.propTypes = {
+  movie: PropTypes.any.isRequired,
+};
+

@@ -1,11 +1,11 @@
-import  MovieCard from 'components/MovieCard/MovieCard';
+import MovieCard from 'components/MovieCard/MovieCard';
 import { getMovieDetails } from 'fetch-services/Fetch-servises';
 import { useEffect, useState, useRef } from 'react';
 import { useParams, useLocation, Link } from 'react-router-dom';
-import { BackBtn } from 'components/MovieCard/MovieCard.styled'
+import { BackBtn } from 'components/MovieCard/MovieCard.styled';
 
 
- const MovieDetails = () => {
+const MovieDetails = () => {
   const [movieDetails, setMovieDetails] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -19,6 +19,7 @@ import { BackBtn } from 'components/MovieCard/MovieCard.styled'
       setLoading(true);
       try {
         const responce = await getMovieDetails(movieId);
+
         setMovieDetails(responce);
       } catch {
         setError(error);
@@ -32,10 +33,9 @@ import { BackBtn } from 'components/MovieCard/MovieCard.styled'
   return (
     <>
       <Link to={backLinkLocation.current}>
-          <BackBtn  type='button'> Go Back</BackBtn >
-        </Link>
+        <BackBtn type="button"> Go Back</BackBtn>
+      </Link>
       <section>
-       
         {loading && <div>Loading...</div>}
         <MovieCard movie={movieDetails} />
       </section>
@@ -43,5 +43,6 @@ import { BackBtn } from 'components/MovieCard/MovieCard.styled'
   );
 };
 
+export default MovieDetails;
 
- export default MovieDetails
+

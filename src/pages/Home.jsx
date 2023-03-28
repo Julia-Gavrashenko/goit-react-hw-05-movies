@@ -12,7 +12,6 @@ const Home = () => {
       setLoading(true);
       try {
         const responce = await getTrendingMovies();
-        console.log(responce);
         setTrendingMovies(responce);
       } catch {
         setError(error);

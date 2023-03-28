@@ -2,7 +2,8 @@ import styled from 'styled-components';
 
 export const LoadBtn = styled.button`
   display: inline-block;
-  margin-left: 920px;
+  margin-left: 500px;
+  margin-right: auto;
   margin-bottom: 40px;
   width: 200px;
   height: 40px;

@@ -1,6 +1,7 @@
 import { getReviews } from 'fetch-services/Fetch-servises';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { ReviewList, ReviewAuthor, ReviewText, NoReview } from './Reviews.styled';
 
  const Reviews = () => {
   const [reviewList, setReviewList] = useState([]);
@@ -33,15 +34,15 @@ import { useParams } from 'react-router-dom';
           <ul>
             {reviewList.map(({ id, author, content }) => {
               return (
-                <li key={id}>
-                  <h4>Author{author}</h4>
-                  <p>{content}</p>
-                </li>
+                <ReviewList key={id}>
+                  <ReviewAuthor>Author: {author}</ReviewAuthor>
+                  <ReviewText>{content}</ReviewText>
+                </ReviewList>
               );
             })}
           </ul>
         ) : (
-          <p>We don't have any reviews for this movie</p>
+          <NoReview>We don't have any reviews for this movie</NoReview>
         )}
       </section>
     </>

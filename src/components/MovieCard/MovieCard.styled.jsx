@@ -30,7 +30,7 @@ export const Card = styled.div`
 `;
 
 export const CardImg = styled.img`
-  width: 280px;
+  width: 300px;
   border-radius: 4px;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
   object-fit: cover;
@@ -56,9 +56,11 @@ export const InfoTitle2 = styled.h3`
 `;
 export const Info = styled.p`
 
-  color: #022633;
+  color: lightskyblue;
   font-weight: 500;
   font-size: 20px;
+   text-shadow: 3px 4px 7px rgba(7, 34, 38, 0.8);
+ 
 `;
 export const GenreList = styled.ul`
   display: flex;
@@ -67,12 +69,14 @@ export const GenreList = styled.ul`
 `;
 
 export const GenreItem = styled.li`
-  color: #033040;
+  color: lightskyblue;
   font-weight: 500;
   font-size: 20px;
+   text-shadow: 3px 4px 7px rgba(7, 34, 38, 0.8);
+ 
 `;
 
-export const InfoSection = styled.h4`
+export const InfoSection = styled.div`
   display: flex;
     gap: 30px;
     align-items: baseline;

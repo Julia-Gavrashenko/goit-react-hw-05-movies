@@ -1,5 +1,4 @@
 import { Suspense } from 'react';
-// import { NavLink  } from 'react-router-dom';
 import { Outlet } from 'react-router-dom';
 import { NavBar, NavLinkStyled,  NavWrapper } from './Header.styled';
 
